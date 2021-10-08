@@ -1,0 +1,197 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap");
+@import "../../../../styles/colors";
+
+.row {
+  .table {
+    font-size: 14px;
+
+    //Override bootstrap table styles
+    > :not(caption) > * > * {
+      border-bottom-width: 0px;
+    }
+    > tbody {
+      vertical-align: initial;
+
+      .tr-container {
+        position: relative;
+      }
+
+      tr {
+        position: relative;
+        border: 1px solid $gray;
+        border-radius: 10px;
+        border-left: unset;
+        border-right: unset;
+        &:nth-child(even) {
+          background-color: $white-shaded;
+          .show-expand {
+            &:before {
+              background: linear-gradient(#ffffff00 -10px, $white-shaded);
+            }
+
+            .sub-section-show {
+              background: $white-shaded !important;
+              border: 1px solid $gray !important;
+            }
+          }
+        }
+        td {
+          z-index: 2;
+          position: relative;
+          //padding: 0px;
+        }
+
+        td:nth-child(1) {
+          width: 200px;
+        }
+        td:nth-child(2) {
+          width: 80px;
+          height: 70px;
+        }
+        td:nth-child(3) {
+          width: 180px;
+          padding: 0px;
+          margin: 0px;
+          z-index: 0;
+          top: 0px;
+          overflow: hidden;
+          line-height: initial;
+
+          .ingredients-container-compact {
+            position: relative;
+
+            height: 46px;
+            width: 180px;
+            padding-right: 10px;
+            top: -10px;
+          }
+
+          .ingredients-container-expanded {
+            position: relative;
+            padding-right: 10px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            top: -10px;
+          }
+
+          &.sub-section-show {
+            overflow: unset;
+            .sub-section-show {
+              position: absolute;
+              top: 11px;
+              left: -1px;
+              height: unset;
+              padding-bottom: 10px;
+              background: $white;
+              border: 1px solid $white-shaded;
+              width: 100%;
+            }
+          }
+        }
+        td:nth-child(4) {
+          width: 350px;
+          height: 70px;
+          z-index: 0;
+          position: relative;
+          padding: 0px;
+          overflow: hidden;
+          white-space: pre-line;
+          line-height: 16px;
+          .instructions-container {
+            top: -10px;
+            position: relative;
+            height: 46px;
+          }
+          &.sub-section-show {
+            overflow: unset;
+            .sub-section-show {
+              position: absolute;
+              top: 11px;
+              left: -1px;
+              height: unset;
+              padding-bottom: 10px;
+              background: $white;
+              border: 1px solid $white-shaded;
+              width: 100%;
+            }
+          }
+        }
+
+        .arrow-down {
+          position: absolute;
+          z-index: 2;
+          bottom: -11px;
+          left: 30%;
+          text-align: center;
+          width: 20px;
+          height: 12px;
+          border-radius: 4px;
+          color: #000;
+          background: #ff9c2c;
+          cursor: pointer;
+          display: flex;
+          justify-content: center;
+          .btn-expand-table {
+            height: 12px;
+            width: 20px;
+            margin: 0px;
+            padding: 0px;
+            position: relative;
+          }
+          &.to-close {
+            bottom: -13px;
+          }
+          .to-close {
+            transform: rotate(180deg);
+
+            .btn {
+            }
+          }
+          svg {
+            margin-top: -20px;
+            position: relative;
+            height: 12px;
+            width: 12px;
+          }
+        }
+
+        .show-expand {
+          position: relative;
+          &:before {
+            content: "";
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            background: linear-gradient(#ffffff00 -10px, #ffffff);
+            z-index: 1;
+          }
+        }
+
+        .hide-expand {
+          &:before {
+            content: "";
+            width: 100%;
+            height: 100%;
+            visibility: hidden;
+          }
+        }
+
+        .sub-section-show {
+          &:before {
+            background: unset !important;
+          }
+        }
+      }
+      .tr-expanded {
+      }
+      img {
+        height: 50px;
+        width: 50px;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+@import "../../../styles/colors";
+
+.row {
+  &.search-bar-container {
+    padding: 2rem 0px;
+    border-bottom: 1px solid $white-shaded;
+    background-color: $white;
+  }
+  .col-add-meal {
+    .btn {
+      float: right;
+      height: 54px;
+      border: 1px solid $black;
+    }
+  }
+}

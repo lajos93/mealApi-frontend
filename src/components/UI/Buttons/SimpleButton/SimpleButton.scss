@@ -1,0 +1,9 @@
+@import "../../../../styles/colors.scss";
+
+.btn {
+  &.btn-main {
+    background-color: $main;
+    display: flex;
+    align-items: center;
+  }
+}

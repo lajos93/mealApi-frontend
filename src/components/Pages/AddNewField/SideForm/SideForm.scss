@@ -1,0 +1,33 @@
+@import "./../../../../styles/colors";
+
+.image-container {
+  padding: 10px 0px;
+  img {
+    height: 150px;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+.list-container {
+  ul {
+    padding: 0px;
+    li {
+      display: block;
+      .remove-item {
+        float: right;
+        svg {
+          color: $red;
+          cursor: pointer;
+        }
+        &.show {
+          display: inline-block;
+        }
+        &.hide {
+          display: none;
+        }
+      }
+    }
+  }
+}

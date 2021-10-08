@@ -1,0 +1,12 @@
+@import "../../../styles/colors";
+.form-container {
+  background-color: $white;
+  border-radius: 10px;
+  border: 1px solid $white-shaded;
+  padding: 20px;
+  .mb-3 {
+    .form-control {
+      padding: 6px 12px !important;
+    }
+  }
+}

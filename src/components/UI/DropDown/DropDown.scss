@@ -1,0 +1,26 @@
+@import "../../../styles/colors.scss";
+
+.dropdown {
+  .dropdown-menu {
+    // margin-top: 6px;
+    border-top: 1px solid $gray;
+    border-top-right-radius: unset;
+    border-top-left-radius: unset;
+    padding: 0;
+    margin: 0px -13px;
+    .dropdown-item {
+      cursor: pointer;
+    }
+  }
+
+  .button-container {
+    padding-bottom: 5px;
+    margin-bottom: 3px;
+  }
+}
+
+.form-control {
+  .btn {
+    color: $gray-text;
+  }
+}

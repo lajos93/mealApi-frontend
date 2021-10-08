@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import { Fragment, useState } from "react";
+import { Route } from "react-router";
+import "./App.scss";
+import AddNewField from "./components/Pages/AddNewField/AddNewField";
+import Header from "./components/Pages/Header/Header";
 
-function App() {
+import Results from "./components/Pages/Results/Results";
+
+const App = () => {
+  const [searchResultsData, setSearchResultsData] = useState(null);
+
+  const handleResults = (val) => {
+    setSearchResultsData(val);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Fragment>
+      <Header resultsData={handleResults} />
+      <div className="container-fluid mb-5">
+        <Route exact path="/">
+          <Results data={searchResultsData} />
+        </Route>
+        <Route exact path="/add-meal">
+          <AddNewField />
+        </Route>
+      </div>
+    </Fragment>
   );
-}
+};
 
 export default App;
