@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 
 const DropDown = (props) => {
   const [isHovered, setIshovered] = useState(false);
-  const [selectedTaxonomy, setSelectedTaxonomy] = useState("sname");
+  const [selectedTaxonomy, setSelectedTaxonomy] = useState("name");
 
   const onMouseOverHandle = () => {
     setIshovered(!isHovered);
@@ -17,10 +17,9 @@ const DropDown = (props) => {
     props.setSelectedField(fields[index]);
   };
 
-  const fields = ["sname", "ccategory", "imain-ingredient"];
+  const fields = ["name", "category", "ingredient"];
 
   const formatString = (string) => {
-    string = string.substring(1);
     string = string.replace("-", " ").toLowerCase();
     string = string.charAt(0).toUpperCase() + string.slice(1);
 

@@ -18,7 +18,7 @@ const App = () => {
       <Header resultsData={handleResults} />
       <div className="container-fluid mb-5">
         <Route exact path="/">
-          <Results data={searchResultsData} />
+          <Results searchData={searchResultsData} />
         </Route>
         <Route exact path="/add-meal">
           <AddNewField />

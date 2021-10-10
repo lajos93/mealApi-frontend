@@ -23,7 +23,7 @@ const Header = (props) => {
   );
   const enteredSearchWordIsEmpty = enteredSearchWord.trim() === "";
 
-  const [selectedTaxonomy, setSelectedTaxonomy] = useState("sname");
+  const [selectedTaxonomy, setSelectedTaxonomy] = useState("name");
 
   const selectedTaxonomyHandle = (val) => {
     setSelectedTaxonomy(val);
@@ -53,7 +53,7 @@ const Header = (props) => {
     }
 
     httpService.fetchData(selectedTaxonomy, enteredSearchWord).then((res) => {
-      props.resultsData(res.data);
+      props.resultsData(res);
       if (location.pathname !== "/") {
         history.push("/");
       }

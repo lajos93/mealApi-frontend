@@ -16,11 +16,13 @@ const Results = (props) => {
   const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
-    if (props.data) {
-      const loadData = !!props.data.meals;
+    if (props.searchData) {
+      const loadData = !!props.searchData.data[0];
       if (loadData) {
-        setInitialData(props.data.meals);
-        setNumberOfPages(Math.floor((props.data.meals.length + 10 - 1) / 10));
+        setInitialData(props.searchData.data);
+        setNumberOfPages(
+          Math.floor((props.searchData.data.length + 10 - 1) / 10)
+        );
         setCurrentPage(1);
       } else {
         setInitialData(null);
