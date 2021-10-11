@@ -11,3 +11,7 @@ You can:
 - add meals to the respective search key word
 - update meals
 - delete meals
+
+## URL
+
+http://leventebognar.com/mealApi_frontend/
