@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { useHistory } from "react-router";
+import HttpService from "../../Services/Http/HttpService";
 import SharedService from "../../Services/Shared/SharedService";
 import "./AddNewField.scss";
 import MainForm from "./MainForm/MainForm";
 import SideForm from "./SideForm/SideForm";
 
-const AddNewField = () => {
+const AddNewField = (props) => {
+  const httpService = HttpService;
   const sharedService = SharedService;
 
   // Name
@@ -98,19 +100,26 @@ const AddNewField = () => {
 
     if (!formIsValid) return;
 
-    const data = {
-      name: enteredName,
-      imgURL: imageURL,
-      ingredients: listData,
-      instructions: enteredInstruction,
-    };
+    const data = JSON.stringify({
+      strMeal: enteredName,
+      strMealThumb: imageURL,
+      strIngredient1: listData[0],
+      strInstructions: enteredInstruction,
+    });
 
-    history.push({
+    httpService
+      .postData(props.selectedTaxonomy, props.enteredSearchWord, data)
+      .then((res) => {
+        props.resultsData(res);
+        history.push("/");
+      });
+
+    /*  history.push({
       pathname: "/",
       state: {
         data: data,
       },
-    });
+    }); */
   };
 
   return (

@@ -26,10 +26,12 @@ const Header = (props) => {
   const [selectedTaxonomy, setSelectedTaxonomy] = useState("name");
 
   const selectedTaxonomyHandle = (val) => {
+    props.selectedTaxonomy(val);
     setSelectedTaxonomy(val);
   };
 
   const keyPressHandle = (val) => {
+    props.enteredSearchWord(val);
     setEnteredSearchWord(val);
   };
 
